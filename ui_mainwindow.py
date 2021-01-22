@@ -173,15 +173,9 @@ class Ui_MainWindow(object):
         self.buttonGroup.setObjectName("buttonGroup")
         self.buttonGroup.addButton(self.radioButton_google)
         self.horizontalLayout.addWidget(self.radioButton_google)
-        self.radioButton_bing = QtWidgets.QRadioButton(self.widget_engine)
-        font = QtGui.QFont()
-        font.setPointSize(12)
-        self.radioButton_bing.setFont(font)
-        self.radioButton_bing.setFocusPolicy(QtCore.Qt.StrongFocus)
-        self.radioButton_bing.setObjectName("radioButton_bing")
-        self.radioButton_bing.setVisible(False)
-        self.buttonGroup.addButton(self.radioButton_bing)
-        self.horizontalLayout.addWidget(self.radioButton_bing)
+
+
+
 
         self.radioButton_baidu = QtWidgets.QRadioButton(self.widget_engine)
         font = QtGui.QFont()
@@ -199,6 +193,32 @@ class Ui_MainWindow(object):
         self.horizontalLayout_6 = QtWidgets.QHBoxLayout(self.widget_driver)
         self.horizontalLayout_6.setObjectName("horizontalLayout_6")
         self.radioButton_chrome_headless = QtWidgets.QRadioButton(self.widget_driver)
+
+
+
+
+        self.radioButton_bing = QtWidgets.QRadioButton(self.widget_engine)
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.radioButton_bing.setFont(font)
+        self.radioButton_bing.setFocusPolicy(QtCore.Qt.StrongFocus)
+        self.radioButton_bing.setChecked(False)
+        self.radioButton_bing.setObjectName("radioButton_bing")
+        self.buttonGroup.addButton(self.radioButton_bing)
+        self.horizontalLayout.addWidget(self.radioButton_bing)
+        self.verticalLayout.addWidget(self.widget_engine)
+        self.widget_driver = QtWidgets.QWidget(self.groupBox_config)
+        self.widget_driver.setVisible(False)
+        self.widget_driver.setObjectName("widget_driver")
+        self.horizontalLayout_6 = QtWidgets.QHBoxLayout(self.widget_driver)
+        self.horizontalLayout_6.setObjectName("horizontalLayout_6")
+        self.radioButton_chrome_headless = QtWidgets.QRadioButton(self.widget_driver)
+
+
+
+
+
+
         font = QtGui.QFont()
         font.setPointSize(12)
         self.radioButton_chrome_headless.setFont(font)
@@ -542,6 +562,8 @@ class Ui_MainWindow(object):
         MainWindow.setTabOrder(self.radioButton_bing, self.radioButton_baidu)
         MainWindow.setTabOrder(self.radioButton_baidu, self.plainTextEdit_log)
 
+
+
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "主窗口"))
@@ -556,7 +578,7 @@ class Ui_MainWindow(object):
         self.pushButton_cancel.setText(_translate("MainWindow", "&退出"))
         self.groupBox_config.setTitle(_translate("MainWindow", "下载配置"))
         self.radioButton_google.setText(_translate("MainWindow", "&谷歌"))
-        self.radioButton_bing.setText(_translate("MainWindow", "&必应"))
+        self.radioButton_bing.setText(_translate("MainWindow", "必应"))
         self.radioButton_baidu.setText(_translate("MainWindow", "百度"))
         self.radioButton_chrome_headless.setText(_translate("MainWindow", "谷歌内核"))
         self.radioButton_chrome.setText(_translate("MainWindow", "谷歌浏览器"))
