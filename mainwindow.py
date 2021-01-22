@@ -89,6 +89,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def gen_config_from_ui(self):
 
         config = utils.AppConfig()
+        if self.radioButton_baidu.isChecked():
+            config.engine="Baidu"
+        if self.radioButton_bing.isChecked():
+            config.engine = "Bing"
         """ Driver """
         if self.radioButton_chrome_headless.isChecked():
             config.driver = "chrome_headless"
@@ -110,8 +114,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         if self.checkBox_from_file.isChecked():
             keywords_list = ''
             str_path = ''
+
+
             str_path = self.lineEdit_path2file.text()
-            #str_path = self.lineEdit_keywords.text()
 
 
             if len(str_path) == 0:
@@ -120,9 +125,18 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             else:
                  keywords_list = utils.gen_keywords_list_from_file(str_path)
         else:
-           # str_keywords = self.lineEdit_path2file.text()
+            keywords_list =''
+
+
+
             str_keywords = self.lineEdit_keywords.text()
-            keywords_list = utils.gen_keywords_list_from_str(str_keywords)
+
+
+            if len(str_keywords) == 0:
+                 messagebox.showinfo("提示", "请输入关键字")
+                 self.close()
+            else:
+                keywords_list = utils.gen_keywords_list_from_str(str_keywords)
         return config, keywords_list
 
     def start_download(self):
