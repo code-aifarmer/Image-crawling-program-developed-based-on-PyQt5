@@ -1,5 +1,4 @@
 # Image-crawling-program-developed-based-on-PyQt5:bug:
-(其实这个是假期实训的项目):yum:
 # `Operating environment`:
 Python version 3.6 and above and all packages required by this program:key:
 # `Program function introduction`：  
