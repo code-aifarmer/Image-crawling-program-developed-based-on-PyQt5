@@ -98,7 +98,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             config.driver = "chrome_headless"
 
 
-        """ Output directory """
+    
         config.output_dir = self.lineEdit_output.text()
 
         """ Switches """
